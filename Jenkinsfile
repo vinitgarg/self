@@ -19,7 +19,7 @@ tools{
                                     }
               stage('Compile Stage'){
                                 steps{
-                                       bat 'mvn clean install'
+                                       bat 'mvn compile'
                                       }
                                      }
               stage('Testing Stage'){
