@@ -35,7 +35,14 @@ tools{
                                            }
                                       }
                                    }
-
+               
+                          stage('Deploy artifact'){
+                                steps{
+                                      rtServer (id: 'Artifactory',url: 'http://localhost:8081/artifactory',username: 'admin',password: 'password')
+                                      rtUpload (serverId: 'Artifactory',spec: '''{"files": [{ "pattern": "/**.war","target": "maven_artifact/"}]}''')
+                                      }
+                                     }
+   
               
               stage('Deploy to tomcat'){
                                 steps{
