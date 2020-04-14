@@ -15,6 +15,18 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>vinitgarg-releases</name>
+        <url>http://localhost:8081/artifactory/Demo-Repo-local</url>
+    </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>vinitgarg-snapshots</name>
+        <url>http://localhost:8081/artifactory/Demo-Repo-local</url>
+    </snapshotRepository>
+</distributionManagement>
   <build>
     <finalName>second_mvn</finalName>
   </build>
