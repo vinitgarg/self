@@ -3,6 +3,5 @@ ADD target/second_mvn.war /usr/local/tomcat/webapps/
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
 
-COPY tomcat-users.xml /usr/local/tomcat/conf/
 
 
