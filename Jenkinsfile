@@ -45,22 +45,14 @@ tools{
                                        bat 'mvn deploy'
                                       }
                                      }
-   
-              
-              stage('Deploy to tomcat'){
-                                steps{
-                                       bat "copy target\\second_mvn.war \"C:\\Users\\vinitgarg\\apache-tomcat-8.5.51\\webapps\""                                   
-                                }
-                                   }
-             stage('Building image') {
+                        stage('Building image') {
                            steps{
                               script {
                                    dockerImage= docker.build registry + ":$BUILD_NUMBER"
                                      }
                                 }
                                }
-  
-              stage('Deploy Image') {
+                       stage('Push image to dockerhub') {
                            steps{
                                 script {
                                      docker.withRegistry( '', registryCredential ) {
@@ -69,6 +61,14 @@ tools{
                                           }
                                     }
                                }
-       
+        
+              
+                      stage('Deploy to tomcat'){
+                                 steps{
+                                       bat "copy target\\second_mvn.war \"C:\\Users\\vinitgarg\\apache-tomcat-8.5.51\\webapps\""                                   
+                                }
+                                   }
+            
+              
      }
 }
