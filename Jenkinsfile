@@ -68,6 +68,12 @@ tools{
                                        bat "copy target\\second_mvn.war \"C:\\Users\\vinitgarg\\apache-tomcat-8.5.51\\webapps\""                                   
                                 }
                                    }
+                      stage('Deploy to localhost'){
+                         steps{  
+                                 bat "docker run -p 80:8080 :$BUILD_NUMBER"
+                         }
+                      }
+         
             
               
      }
