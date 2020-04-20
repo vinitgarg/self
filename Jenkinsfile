@@ -21,16 +21,7 @@ tools{
                                         bat 'mvn package'
                                      }
                                     }
-              stage('Compile Stage'){
-                                steps{
-                                       bat 'mvn compile'
-                                      }
-                                     }
-              stage('Testing Stage'){
-                                steps{
-                                      bat 'mvn test'
-                                     } 
-                                    }
+             
              stage(' SonarQube analysis')
                                          {
                               steps {
@@ -40,7 +31,7 @@ tools{
                                       }
                                    }
                
-                          stage('Deploy artifact'){
+                          stage('Deploy to artifactory'){
                                 steps{
                                        bat 'mvn deploy'
                                       }
