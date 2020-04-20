@@ -70,7 +70,7 @@ tools{
                                    }
                       stage('Deploy to localhost'){
                          steps{  
-                                 bat "docker run -p 80:8080 +":$BUILD_NUMBER""
+                                 bat "docker run -p 80:8080 $BUILD_NUMBER"
                          }
                       }
          
