@@ -54,11 +54,7 @@ tools{
                                }
                        stage('Push image to dockerhub') {
                            steps{
-                                script {
-                                     docker.withRegistry( '', registryCredential ) {
-                                     dockerImage.push()
-                                             }
-                                          }
+                                    bat "docker push vkgarg/vinit:%BUILD_NUMBER%"
                                     }
                                }
         
@@ -70,7 +66,8 @@ tools{
                                    }
                       stage('Deploy to localhost'){
                          steps{  
-                                 bat "docker run -p 80:8080 $BUILD_NUMBER"
+                                 bat "docker rm -f second_mvn"
+                                 bat "docker run -d --name second_mvn -p 80:8080 vkgarg/vinit:%BUILD_NUMBER%"
                          }
                       }
          
