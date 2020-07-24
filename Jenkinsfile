@@ -26,7 +26,7 @@ tools{
                                          {
                               steps {
                                     withSonarQubeEnv('Sonarqube') {
-                                         bat 'mvn sonar:sonar -Dsonar.projectKey=self -Dsonar.host.url=http://localhost:9000 -Dsonar.login=8c037913ed1d0323d84690f5bba8d3ae44802621'
+                                         bat 'mvn sonar:sonar -Dsonar.projectKey=self -Dsonar.host.url=http://localhost:9000 -Dsonar.login=4dbae951ce004a29ed598247d70e1d982241113d'
                                            }
                                       }
                                    }
