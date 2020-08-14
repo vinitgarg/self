@@ -22,7 +22,7 @@ tools{
                                      }
                                     }
              
-             stage(' SonarQube analysis')
+            /* stage(' SonarQube analysis')
                                          {
                               steps {
                                     withSonarQubeEnv('Sonarqube') {
@@ -35,7 +35,7 @@ tools{
                                 steps{
                                        bat 'mvn deploy'
                                       }
-                                     }
+                                     }*/
                         stage('Building image') {
                            steps{
                               script {
