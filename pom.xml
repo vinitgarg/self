@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.nagarro</groupId>
-  <artifactId>second_mvn</artifactId>
+  <artifactId>second</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>second_mvn Maven Webapp</name>
@@ -28,6 +28,6 @@
     </snapshotRepository>
 </distributionManagement>
   <build>
-    <finalName>second_mvn</finalName>
+    <finalName>second</finalName>
   </build>
 </project>
